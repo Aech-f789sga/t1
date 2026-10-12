@@ -1,0 +1,427 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-arnie: 'Architects Daughter', cursive, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+    --app-font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --app-font-scale: 100%;
+    --app-bg-page: #020617;
+    --app-bg-card: #0f172a;
+    --app-bg-card-subtle: #1e293b;
+    --app-border: #334155;
+    --app-text-primary: #f8fafc;
+    --app-text-secondary: #cbd5e1;
+    --app-text-muted: #94a3b8;
+    --app-accent: #f59e0b;
+    --app-accent-hover: #d97706;
+    --app-accent-text: #0f172a;
+    --app-accent-badge: rgba(245, 158, 11, 0.15);
+    --app-grid-line: rgba(56, 189, 248, 0.05);
+  }
+
+  body {
+    font-family: var(--app-font-family);
+    background-color: var(--app-bg-page);
+    color: var(--app-text-primary);
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+}
+
+/* Default brand font for specific titles */
+.font-arnie-brand {
+  font-family: 'Architects Daughter', cursive, sans-serif;
+  letter-spacing: 0.02em;
+}
+
+/* Dynamic question, answer, solution, and reader font (inherits user's chosen font) */
+.font-reader,
+.font-arnie {
+  font-family: var(--app-font-family) !important;
+}
+
+/* Code & numbers font */
+.font-tech-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* =========================================================================
+   HIGH CONTRAST & ADAPTIVE TEXT OUTLINE (Theme Change Protection)
+   Ensures text is always easily readable against any background color
+   ========================================================================= */
+
+/* Dark Theme Text Contrast Rules */
+html.dark [data-contrast-outline="true"] .font-reader,
+html.dark [data-contrast-outline="true"] .font-arnie,
+html.dark[data-contrast-outline="true"] .font-reader,
+html.dark[data-contrast-outline="true"] .font-arnie {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85), 0 0 1px rgba(0, 0, 0, 0.9);
+}
+
+html.dark [data-contrast-outline="true"] h1,
+html.dark [data-contrast-outline="true"] h2,
+html.dark [data-contrast-outline="true"] h3,
+html.dark[data-contrast-outline="true"] h1,
+html.dark[data-contrast-outline="true"] h2,
+html.dark[data-contrast-outline="true"] h3 {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Light & Sepia Theme Text Contrast Overrides */
+html.light body,
+html.light {
+  color: var(--app-text-primary) !important;
+}
+
+html.light [data-contrast-outline="true"] .font-reader,
+html.light [data-contrast-outline="true"] .font-arnie,
+html.light[data-contrast-outline="true"] .font-reader,
+html.light[data-contrast-outline="true"] .font-arnie {
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.95), 0 0 1px rgba(255, 255, 255, 0.85);
+}
+
+/* Universal text contrast outline utility */
+.text-contrast-outline {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.85);
+}
+
+html.light .text-contrast-outline {
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.95);
+}
+
+/* In light themes, adapt hardcoded Tailwind slate text colors so they maintain sharp contrast */
+html.light .text-white {
+  color: #020617 !important;
+}
+
+html.light .text-slate-100 {
+  color: #090d16 !important;
+}
+
+html.light .text-slate-200 {
+  color: #1e293b !important;
+}
+
+html.light .text-slate-300 {
+  color: #334155 !important;
+}
+
+html.light .text-slate-400 {
+  color: #475569 !important;
+}
+
+/* In light themes, adapt cards that had hardcoded dark backgrounds */
+html.light .bg-slate-950,
+html.light .bg-slate-900,
+html.light .bg-slate-900\/90,
+html.light .bg-slate-900\/95,
+html.light .bg-slate-900\/80,
+html.light .bg-slate-950\/60,
+html.light .bg-slate-950\/70,
+html.light .bg-slate-950\/80,
+html.light .bg-slate-950\/90 {
+  background-color: var(--app-bg-card) !important;
+  border-color: var(--app-border) !important;
+  color: var(--app-text-primary) !important;
+}
+
+html.light .bg-slate-800,
+html.light .bg-slate-850,
+html.light .bg-slate-800\/60,
+html.light .bg-slate-800\/80 {
+  background-color: var(--app-bg-card-subtle) !important;
+  border-color: var(--app-border) !important;
+}
+
+html.light .border-slate-800,
+html.light .border-slate-700,
+html.light .border-slate-900 {
+  border-color: var(--app-border) !important;
+}
+
+/* For blueprint mode, guarantee cards adopt blueprint navy background */
+html[data-theme="blueprint_navy"] .bg-slate-950,
+html[data-theme="blueprint_navy"] .bg-slate-900,
+html[data-theme="blueprint_navy"] .bg-slate-900\/90,
+html[data-theme="blueprint_navy"] .bg-slate-900\/95,
+html[data-theme="blueprint_navy"] .bg-slate-950\/70,
+html[data-theme="blueprint_navy"] .bg-slate-950\/90 {
+  background-color: #0d2342 !important;
+  border-color: #2563eb !important;
+}
+
+/* For cyber cad mode, guarantee cards adopt dark green background */
+html[data-theme="cyber_cad"] .bg-slate-950,
+html[data-theme="cyber_cad"] .bg-slate-900,
+html[data-theme="cyber_cad"] .bg-slate-900\/90,
+html[data-theme="cyber_cad"] .bg-slate-900\/95,
+html[data-theme="cyber_cad"] .bg-slate-950\/70,
+html[data-theme="cyber_cad"] .bg-slate-950\/90 {
+  background-color: #08170d !important;
+  border-color: #15803d !important;
+}
+
+/* For emerald matrix mode */
+html[data-theme="emerald_matrix"] .bg-slate-950,
+html[data-theme="emerald_matrix"] .bg-slate-900,
+html[data-theme="emerald_matrix"] .bg-slate-900\/90,
+html[data-theme="emerald_matrix"] .bg-slate-900\/95,
+html[data-theme="emerald_matrix"] .bg-slate-950\/70,
+html[data-theme="emerald_matrix"] .bg-slate-950\/90 {
+  background-color: #062424 !important;
+  border-color: #0f766e !important;
+}
+
+/* Dynamic theme background styling classes */
+.app-theme-bg {
+  background-color: var(--app-bg-page);
+  color: var(--app-text-primary);
+}
+
+.app-card-bg {
+  background-color: var(--app-bg-card);
+  border-color: var(--app-border);
+}
+
+.app-card-subtle-bg {
+  background-color: var(--app-bg-card-subtle);
+  border-color: var(--app-border);
+}
+
+/* Engineering blueprint grid background */
+.bg-blueprint-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, var(--app-grid-line, rgba(56, 189, 248, 0.05)) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--app-grid-line, rgba(56, 189, 248, 0.05)) 1px, transparent 1px);
+}
+
+.bg-blueprint-dot {
+  background-size: 24px 24px;
+  background-image: radial-gradient(circle, var(--app-grid-line, rgba(148, 163, 184, 0.12)) 1px, transparent 1px);
+}
+
+/* Custom scrollbars matching theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--app-bg-page);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--app-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--app-accent);
+}
+
+/* KaTeX formula contrast & typography */
+.katex {
+  font-size: 1.05em;
+  line-height: 1.2;
+}
+
+.inline-math {
+  display: inline-block;
+  vertical-align: -0.05em;
+}
+
+html.light .katex {
+  color: #0f172a !important;
+}
+
+html.dark .katex {
+  color: #f8fafc !important;
+}
+
+/* Authentic Engineering Examination Table */
+.exam-table-card {
+  border: 2px solid var(--app-border, #334155);
+  background-color: var(--app-bg-card, #0f172a);
+}
+
+.exam-table-header {
+  background-color: var(--app-bg-card-subtle, #1e293b);
+  border-bottom: 2px solid var(--app-border, #334155);
+}
+
+.exam-table-row-even {
+  background-color: var(--app-bg-card, #0f172a);
+}
+
+.exam-table-row-odd {
+  background-color: var(--app-bg-card-subtle, #1e293b);
+}
+
+.exam-table-cell {
+  border-right: 1px solid var(--app-border, #334155);
+  border-bottom: 1px solid var(--app-border, #334155);
+}
+
+/* =========================================================================
+   STRUCTURAL AURORA — glass + 3D depth theme (data-theme="aurora_glass")
+   ========================================================================= */
+
+html[data-theme="aurora_glass"] body {
+  background-image:
+    radial-gradient(60rem 40rem at 12% -10%, rgba(139, 123, 255, 0.28), transparent 60%),
+    radial-gradient(50rem 36rem at 95% 8%, rgba(34, 211, 238, 0.16), transparent 60%),
+    radial-gradient(46rem 34rem at 60% 110%, rgba(244, 114, 182, 0.14), transparent 60%);
+  background-attachment: fixed;
+}
+
+/* fixed 3D scene layer sits behind the app */
+.scene-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.9;
+}
+.app-above-scene { position: relative; z-index: 1; }
+
+/* ---- glass surfaces: remap the hard-coded slate cards ---- */
+html[data-theme="aurora_glass"] .bg-slate-900,
+html[data-theme="aurora_glass"] .bg-slate-900\/90,
+html[data-theme="aurora_glass"] .bg-slate-900\/95,
+html[data-theme="aurora_glass"] .bg-slate-900\/80,
+html[data-theme="aurora_glass"] .app-card-bg {
+  background: linear-gradient(150deg, rgba(40, 44, 110, 0.50), rgba(12, 15, 44, 0.62)) !important;
+  border-color: rgba(167, 155, 255, 0.24) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  backdrop-filter: blur(16px) saturate(150%);
+  box-shadow:
+    0 24px 60px -24px rgba(0, 0, 0, 0.75),
+    0 0 0 1px rgba(255, 255, 255, 0.03),
+    inset 0 1px 0 rgba(255, 255, 255, 0.10);
+}
+
+html[data-theme="aurora_glass"] .bg-slate-950,
+html[data-theme="aurora_glass"] .bg-slate-950\/90,
+html[data-theme="aurora_glass"] .bg-slate-950\/80,
+html[data-theme="aurora_glass"] .bg-slate-950\/70,
+html[data-theme="aurora_glass"] .bg-slate-950\/60,
+html[data-theme="aurora_glass"] .app-card-subtle-bg {
+  background-color: rgba(10, 12, 38, 0.55) !important;
+  border-color: rgba(139, 123, 255, 0.22) !important;
+}
+
+html[data-theme="aurora_glass"] .bg-slate-800,
+html[data-theme="aurora_glass"] .bg-slate-800\/60,
+html[data-theme="aurora_glass"] .bg-slate-800\/80 {
+  background-color: rgba(48, 54, 130, 0.45) !important;
+}
+
+html[data-theme="aurora_glass"] .border-slate-800,
+html[data-theme="aurora_glass"] .border-slate-700,
+html[data-theme="aurora_glass"] .border-slate-700\/80,
+html[data-theme="aurora_glass"] .border-slate-900 {
+  border-color: rgba(139, 123, 255, 0.26) !important;
+}
+
+/* header + footer become translucent glass bars */
+html[data-theme="aurora_glass"] header {
+  background: rgba(7, 10, 31, 0.62) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  backdrop-filter: blur(18px) saturate(160%);
+  border-color: rgba(167, 155, 255, 0.22) !important;
+  box-shadow: 0 10px 40px -18px rgba(0, 0, 0, 0.8);
+}
+html[data-theme="aurora_glass"] footer {
+  background: rgba(7, 10, 31, 0.55) !important;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+/* hero panel: aurora gradient with the 3D canvas on the right */
+html[data-theme="aurora_glass"] .hero-aurora {
+  background:
+    radial-gradient(40rem 22rem at 85% 20%, rgba(34, 211, 238, 0.18), transparent 65%),
+    radial-gradient(36rem 22rem at 5% 100%, rgba(244, 114, 182, 0.15), transparent 65%),
+    linear-gradient(135deg, rgba(34, 30, 96, 0.78), rgba(9, 11, 36, 0.82)) !important;
+  border-color: rgba(167, 155, 255, 0.35) !important;
+  box-shadow: 0 30px 80px -30px rgba(80, 60, 255, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+html[data-theme="aurora_glass"] .hero-aurora h1 {
+  background: linear-gradient(95deg, #ffffff 10%, #c4b8ff 45%, #67e8f9 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+  text-shadow: none !important;
+}
+
+/* gradient accent buttons get lift + glow */
+html[data-theme="aurora_glass"] .bg-amber-500:not(span),
+html[data-theme="aurora_glass"] button.bg-amber-500 {
+  background-image: linear-gradient(135deg, #a99bff, #6f5cf0) !important;
+  background-color: #8b7bff !important;
+  color: #0b0720 !important;
+  box-shadow: 0 10px 28px -8px rgba(139, 123, 255, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+html[data-theme="aurora_glass"] main button:not(:disabled) {
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background-color 0.18s ease;
+}
+html[data-theme="aurora_glass"] main button:not(:disabled):hover {
+  box-shadow: 0 14px 34px -14px rgba(139, 123, 255, 0.7);
+}
+
+/* scrollbars */
+html[data-theme="aurora_glass"] ::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #8b7bff, #22d3ee);
+}
+
+html[data-theme="aurora_glass"] ::selection { background: #8b7bff; color: #0b0720; }
+
+/* ---- 3D tilt card ---- */
+.tilt3d-wrap { perspective: 900px; height: 100%; }
+.tilt3d {
+  --rx: 0deg; --ry: 0deg; --gx: 50%; --gy: 50%;
+  position: relative;
+  height: 100%;
+  transform-style: preserve-3d;
+  transform: rotateX(var(--rx)) rotateY(var(--ry));
+  transition: transform 0.25s cubic-bezier(.2,.8,.2,1);
+  border-radius: 0.75rem;
+  will-change: transform;
+}
+.tilt3d:hover { transition: transform 0.06s linear; }
+.tilt3d > button, .tilt3d > div:not(.tilt3d-glare) { height: 100%; width: 100%; }
+.tilt3d > button { transform: translateZ(18px); }
+.tilt3d-glare {
+  position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+  background: radial-gradient(18rem circle at var(--gx) var(--gy), rgba(255, 255, 255, 0.16), transparent 45%);
+  opacity: 0; transition: opacity 0.2s ease; mix-blend-mode: soft-light;
+  transform: translateZ(30px);
+}
+.tilt3d:hover .tilt3d-glare { opacity: 1; }
+@media (hover: none) { .tilt3d { transform: none !important; } }
+
+/* ---- CSS 3D cube brand mark ---- */
+.cube3d-scene { perspective: 220px; display: inline-block; }
+.cube3d {
+  position: relative; width: 100%; height: 100%;
+  transform-style: preserve-3d;
+  animation: cube-spin 14s linear infinite;
+}
+.cube3d-face {
+  position: absolute; inset: 0;
+  border: 1.5px solid rgba(167, 155, 255, 0.95);
+  background: linear-gradient(135deg, rgba(139, 123, 255, 0.28), rgba(34, 211, 238, 0.18));
+  box-shadow: inset 0 0 12px rgba(139, 123, 255, 0.45);
+}
+@keyframes cube-spin {
+  from { transform: rotateX(-24deg) rotateY(0deg); }
+  to   { transform: rotateX(-24deg) rotateY(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cube3d { animation: none; transform: rotateX(-24deg) rotateY(35deg); }
+  .tilt3d { transition: none; }
+}
