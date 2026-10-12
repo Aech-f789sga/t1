@@ -11,45 +11,6 @@ export const HPGE_NOV2024_PART1: Question[] = [
     month: 'November',
     category: 'Fluid Statics - Atmospheric Pressure & Barometer',
     text: 'A mercury barometer at the top of a mountain reads 538 mmHg, while another barometer at the base reads 700 mmHg. Assuming a constant unit weight of air of 12 N/m³, determine the height of the mountain in kilometers.',
-    figureSvg: `<svg viewBox="0 0 460 260" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
-      <defs>
-        <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#0284c7" stop-opacity="0.3"/>
-          <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.05"/>
-        </linearGradient>
-        <linearGradient id="mtnGrad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#64748b"/>
-          <stop offset="100%" stop-color="#334155"/>
-        </linearGradient>
-      </defs>
-      <rect width="460" height="260" rx="8" fill="url(#skyGrad)"/>
-      <!-- Mountain Profile -->
-      <polygon points="40,230 200,60 260,110 320,50 420,230" fill="url(#mtnGrad)" stroke="#94a3b8" stroke-width="2"/>
-      <!-- Snowcap -->
-      <polygon points="180,78 200,60 220,78 210,85 200,80 190,85" fill="#f8fafc"/>
-      <polygon points="305,70 320,50 335,70 325,75 315,75" fill="#f8fafc"/>
-      <!-- Ground line -->
-      <line x1="20" y1="230" x2="440" y2="230" stroke="#475569" stroke-width="3"/>
-      <!-- Top Barometer Marker -->
-      <circle cx="200" cy="55" r="5" fill="#f59e0b"/>
-      <rect x="70" y="32" width="120" height="36" rx="4" fill="#0f172a" stroke="#f59e0b" stroke-width="1.5"/>
-      <text x="130" y="47" fill="#fbbf24" font-size="11" font-family="monospace" text-anchor="middle" font-weight="bold">Mountain Top</text>
-      <text x="130" y="60" fill="#f8fafc" font-size="11" font-family="monospace" text-anchor="middle">538 mmHg</text>
-      <line x1="190" y1="50" x2="200" y2="55" stroke="#f59e0b" stroke-width="1.5"/>
-      <!-- Base Barometer Marker -->
-      <circle cx="70" cy="230" r="5" fill="#38bdf8"/>
-      <rect x="25" y="175" width="120" height="36" rx="4" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
-      <text x="85" y="190" fill="#38bdf8" font-size="11" font-family="monospace" text-anchor="middle" font-weight="bold">Mountain Base</text>
-      <text x="85" y="203" fill="#f8fafc" font-size="11" font-family="monospace" text-anchor="middle">700 mmHg</text>
-      <line x1="85" y1="211" x2="70" y2="230" stroke="#38bdf8" stroke-width="1.5"/>
-      <!-- Dimension Arrow Height h -->
-      <line x1="435" y1="55" x2="435" y2="230" stroke="#f59e0b" stroke-width="2"/>
-      <polygon points="435,50 431,60 439,60" fill="#f59e0b"/>
-      <polygon points="435,235 431,225 439,225" fill="#f59e0b"/>
-      <text x="420" y="145" fill="#f59e0b" font-size="13" font-family="sans-serif" font-weight="bold" text-anchor="end">h = ?</text>
-      <text x="250" y="248" fill="#94a3b8" font-size="11" font-family="sans-serif">γ_air = 12 N/m³ (constant)</text>
-    </svg>`,
-    figureCaption: 'Figure 1: Atmospheric pressure variation with mountain elevation',
     options: [
       { label: 'A', text: '3.13' },
       { label: 'B', text: '0.8' },
@@ -154,45 +115,6 @@ export const HPGE_NOV2024_PART1: Question[] = [
     month: 'November',
     category: 'Fluid Statics - Hydrostatic Force on Submerged Gates',
     text: 'A vertical trapezoidal gate has its top edge at the water surface and is 1.5 m long. Its two vertical sides are 2.4 m and 3.0 m, respectively. The gate is hinged along its top edge. Determine the force, in kN, required at the bottom of the gate to just open it. The applied force acts normal to the gate at a point located 0.75 m from each side of the gate.',
-    figureSvg: `<svg viewBox="0 0 460 260" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
-      <defs>
-        <pattern id="hatchH4" width="8" height="8" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
-          <line x1="0" y1="0" x2="0" y2="8" stroke="#38bdf8" stroke-width="1.2" opacity="0.4"/>
-        </pattern>
-      </defs>
-      <!-- Water surface -->
-      <line x1="40" y1="40" x2="380" y2="40" stroke="#38bdf8" stroke-width="2.5"/>
-      <polygon points="60,35 65,40 55,40" fill="#38bdf8"/>
-      <line x1="53" y1="33" x2="67" y2="33" stroke="#38bdf8" stroke-width="1"/>
-      <text x="80" y="32" fill="#38bdf8" font-size="11" font-family="sans-serif">Water Surface</text>
-      <!-- Top Hinge (Length 1.5 m) -->
-      <rect x="100" y="36" width="180" height="8" rx="2" fill="#f59e0b" stroke="#b45309" stroke-width="1"/>
-      <text x="190" y="28" fill="#f59e0b" font-size="11" font-family="sans-serif" font-weight="bold" text-anchor="middle">Hinged Top Edge (1.5 m)</text>
-      <!-- Trapezoidal Gate 3D Projection -->
-      <!-- Left side 2.4 m, Right side 3.0 m -->
-      <polygon points="100,44 280,44 280,210 100,175" fill="url(#hatchH4)" stroke="#f8fafc" stroke-width="2"/>
-      <!-- Division into Rectangle and Triangle -->
-      <line x1="100" y1="175" x2="280" y2="175" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="4 3"/>
-      <!-- Labels on Gate -->
-      <text x="190" y="110" fill="#f8fafc" font-size="11" font-family="sans-serif" text-anchor="middle">Part 1: Rectangle (1.5 × 2.4)</text>
-      <text x="190" y="195" fill="#f8fafc" font-size="10" font-family="sans-serif" text-anchor="middle">Part 2: Triangle (h = 0.6 m)</text>
-      <!-- Dimensions -->
-      <!-- Left side height 2.4 m -->
-      <line x1="80" y1="44" x2="80" y2="175" stroke="#94a3b8" stroke-width="1.5"/>
-      <line x1="75" y1="44" x2="85" y2="44" stroke="#94a3b8" stroke-width="1.5"/>
-      <line x1="75" y1="175" x2="85" y2="175" stroke="#94a3b8" stroke-width="1.5"/>
-      <text x="70" y="115" fill="#94a3b8" font-size="11" font-family="sans-serif" text-anchor="end">2.4 m</text>
-      <!-- Right side height 3.0 m -->
-      <line x1="300" y1="44" x2="300" y2="210" stroke="#94a3b8" stroke-width="1.5"/>
-      <line x1="295" y1="44" x2="305" y2="44" stroke="#94a3b8" stroke-width="1.5"/>
-      <line x1="295" y1="210" x2="305" y2="210" stroke="#94a3b8" stroke-width="1.5"/>
-      <text x="310" y="130" fill="#94a3b8" font-size="11" font-family="sans-serif" text-anchor="start">3.0 m</text>
-      <!-- Applied Force P -->
-      <line x1="190" y1="240" x2="190" y2="200" stroke="#ec4899" stroke-width="3"/>
-      <polygon points="190,192 185,202 195,202" fill="#ec4899"/>
-      <text x="205" y="235" fill="#ec4899" font-size="12" font-family="sans-serif" font-weight="bold">P = ? (0.75 m from edges)</text>
-    </svg>`,
-    figureCaption: 'Figure 4: Vertical trapezoidal gate hinged at the top edge',
     options: [
       { label: 'A', text: '36.2' },
       { label: 'B', text: '35.2' },
@@ -266,44 +188,6 @@ export const HPGE_NOV2024_PART1: Question[] = [
     month: 'November',
     category: 'Fluid Statics - Rotating Cylindrical Vessels',
     text: 'An open cylindrical tank is 2.1 m high and 1.3 m in diameter. It is initially filled with water to two-thirds of its height. The tank is rotated about its vertical central axis at 90 rpm. Determine the volume of water spilled, in liters.',
-    figureSvg: `<svg viewBox="0 0 460 250" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
-      <defs>
-        <linearGradient id="waterCyl" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.6"/>
-          <stop offset="100%" stop-color="#0284c7" stop-opacity="0.9"/>
-        </linearGradient>
-      </defs>
-      <!-- Tank 1: At rest -->
-      <g transform="translate(60, 20)">
-        <text x="65" y="15" fill="#94a3b8" font-size="11" font-family="sans-serif" text-anchor="middle" font-weight="bold">Static (2/3 Full)</text>
-        <ellipse cx="65" cy="40" rx="45" ry="12" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
-        <rect x="20" y="40" width="90" height="150" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
-        <ellipse cx="65" cy="190" rx="45" ry="12" fill="#1e293b" stroke="#94a3b8" stroke-width="1.5"/>
-        <!-- Water body -->
-        <path d="M 20,90 Q 65,100 110,90 L 110,190 Q 65,202 20,190 Z" fill="url(#waterCyl)" opacity="0.75"/>
-        <ellipse cx="65" cy="90" rx="45" ry="10" fill="#38bdf8" stroke="#0284c7" stroke-width="1"/>
-        <!-- Dimensions -->
-        <text x="65" y="145" fill="#f8fafc" font-size="11" font-family="sans-serif" text-anchor="middle">Water = 1.4 m</text>
-        <text x="65" y="70" fill="#cbd5e1" font-size="10" font-family="sans-serif" text-anchor="middle">Air = 0.7 m</text>
-      </g>
-      <!-- Tank 2: Rotating at 90 rpm -->
-      <g transform="translate(260, 20)">
-        <text x="65" y="15" fill="#f59e0b" font-size="11" font-family="sans-serif" text-anchor="middle" font-weight="bold">Rotating (90 rpm)</text>
-        <ellipse cx="65" cy="40" rx="45" ry="12" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
-        <rect x="20" y="40" width="90" height="150" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
-        <ellipse cx="65" cy="190" rx="45" ry="12" fill="#1e293b" stroke="#94a3b8" stroke-width="1.5"/>
-        <!-- Paraboloid curve -->
-        <path d="M 20,40 Q 65,175 110,40 L 110,190 Q 65,202 20,190 Z" fill="url(#waterCyl)"/>
-        <!-- Paraboloid depth line -->
-        <line x1="65" y1="40" x2="65" y2="175" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="3 3"/>
-        <text x="125" y="110" fill="#f59e0b" font-size="10" font-family="sans-serif">y = 1.913 m</text>
-        <!-- Rotation Arrow -->
-        <path d="M 45,215 A 25 10 0 1 0 85,215" fill="none" stroke="#38bdf8" stroke-width="2"/>
-        <polygon points="85,212 90,217 83,219" fill="#38bdf8"/>
-        <text x="65" y="235" fill="#38bdf8" font-size="10" font-family="sans-serif" text-anchor="middle">ω = 90 rpm</text>
-      </g>
-    </svg>`,
-    figureCaption: 'Figure 6: Forced vortex rotation with water spillage in open cylindrical tank',
     options: [
       { label: 'A', text: '81.3' },
       { label: 'B', text: '313.4' },
@@ -343,36 +227,6 @@ export const HPGE_NOV2024_PART1: Question[] = [
     month: 'November',
     category: 'Fluid Statics - Rotating Cylindrical Vessels',
     text: 'An open cylindrical tank is 1.5 m high and 0.40 m in diameter and initially contains water. The tank rotates about its vertical central axis at 240 rpm. Determine the maximum initial water depth (in meter) that will prevent spillage during rotation.',
-    figureSvg: `<svg viewBox="0 0 460 240" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
-      <defs>
-        <linearGradient id="rotGrad7" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.7"/>
-          <stop offset="100%" stop-color="#0369a1" stop-opacity="0.95"/>
-        </linearGradient>
-      </defs>
-      <rect width="460" height="240" rx="8" fill="#0f172a"/>
-      <!-- Tank Outline -->
-      <g transform="translate(190, 20)">
-        <ellipse cx="40" cy="20" rx="40" ry="10" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
-        <rect x="0" y="20" width="80" height="170" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
-        <ellipse cx="40" cy="190" rx="40" ry="10" fill="#1e293b" stroke="#94a3b8" stroke-width="1.5"/>
-        <!-- Paraboloid to top rim (no spillage condition) -->
-        <path d="M 0,20 Q 40,165 80,20 L 80,190 Q 40,200 0,190 Z" fill="url(#rotGrad7)"/>
-        <!-- Static water level dashed line -->
-        <line x1="-15" y1="92.5" x2="95" y2="92.5" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="4 3"/>
-        <text x="105" y="96" fill="#f59e0b" font-size="10" font-family="sans-serif">Static Level</text>
-        <!-- Rise y/2 and depression y/2 -->
-        <line x1="95" y1="20" x2="95" y2="92.5" stroke="#38bdf8" stroke-width="1.2"/>
-        <text x="105" y="60" fill="#38bdf8" font-size="10" font-family="sans-serif">d = y/2</text>
-      </g>
-      <!-- Annotations -->
-      <text x="60" y="70" fill="#f8fafc" font-size="12" font-family="sans-serif" font-weight="bold">No Spillage Condition:</text>
-      <text x="60" y="95" fill="#cbd5e1" font-size="11" font-family="sans-serif">y = ω²r² / 2g = 1.288 m</text>
-      <text x="60" y="115" fill="#cbd5e1" font-size="11" font-family="sans-serif">Rise at wall = y / 2 = 0.644 m</text>
-      <text x="60" y="145" fill="#38bdf8" font-size="12" font-family="sans-serif" font-weight="bold">h_initial = H - y / 2</text>
-      <text x="60" y="165" fill="#38bdf8" font-size="12" font-family="sans-serif">= 1.5 - 0.644 = 0.856 m</text>
-    </svg>`,
-    figureCaption: 'Figure 7: Maximum permissible initial water depth to avoid spillage at 240 rpm',
     options: [
       { label: 'A', text: '0.131' },
       { label: 'B', text: '0.856' },
@@ -444,40 +298,6 @@ export const HPGE_NOV2024_PART1: Question[] = [
     month: 'November',
     category: 'Fluid Statics - Buoyancy & Moored Submerged Bodies',
     text: 'A sphere with a radius of 375 mm is fully immersed in seawater with a specific gravity of 1.026 and is anchored to the seabed. The tension in the mooring line is 270 N. Determine the unit weight of the sphere in kN/m³.',
-    figureSvg: `<svg viewBox="0 0 460 240" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
-      <defs>
-        <radialGradient id="sphereGrad" cx="35%" cy="35%" r="65%">
-          <stop offset="0%" stop-color="#94a3b8"/>
-          <stop offset="100%" stop-color="#334155"/>
-        </radialGradient>
-      </defs>
-      <rect width="460" height="240" rx="8" fill="#0f172a"/>
-      <!-- Water Background -->
-      <rect x="20" y="20" width="420" height="200" rx="6" fill="#0284c7" fill-opacity="0.15" stroke="#0284c7" stroke-dasharray="4 2"/>
-      <text x="40" y="45" fill="#38bdf8" font-size="11" font-family="sans-serif">Seawater (SG = 1.026)</text>
-      <!-- Submerged Sphere -->
-      <g transform="translate(230, 100)">
-        <circle cx="0" cy="0" r="45" fill="url(#sphereGrad)" stroke="#cbd5e1" stroke-width="1.5"/>
-        <text x="0" y="4" fill="#f8fafc" font-size="10" font-family="sans-serif" text-anchor="middle">R = 375 mm</text>
-        <!-- Buoyant Force Arrow Up -->
-        <line x1="0" y1="-45" x2="0" y2="-85" stroke="#38bdf8" stroke-width="3"/>
-        <polygon points="0,-92 -5,-82 5,-82" fill="#38bdf8"/>
-        <text x="12" y="-70" fill="#38bdf8" font-size="11" font-family="sans-serif" font-weight="bold">BF</text>
-        <!-- Weight Arrow Down -->
-        <line x1="-15" y1="20" x2="-15" y2="60" stroke="#f59e0b" stroke-width="2.5"/>
-        <polygon points="-15,66 -19,57 -11,57" fill="#f59e0b"/>
-        <text x="-25" y="55" fill="#f59e0b" font-size="10" font-family="sans-serif" text-anchor="end">W_sphere</text>
-        <!-- Tension Arrow Down -->
-        <line x1="0" y1="45" x2="0" y2="100" stroke="#ec4899" stroke-width="2.5"/>
-        <polygon points="0,85 -4,75 4,75" fill="#ec4899"/>
-        <text x="12" y="80" fill="#ec4899" font-size="10" font-family="sans-serif" font-weight="bold">T = 270 N</text>
-      </g>
-      <!-- Seabed Anchor -->
-      <rect x="200" y="200" width="60" height="12" rx="2" fill="#475569"/>
-      <line x1="170" y1="212" x2="290" y2="212" stroke="#64748b" stroke-width="3"/>
-      <text x="230" y="226" fill="#94a3b8" font-size="9" font-family="sans-serif" text-anchor="middle">Seabed</text>
-    </svg>`,
-    figureCaption: 'Figure 9: Submerged anchored sphere in equilibrium',
     options: [
       { label: 'A', text: '0.901' },
       { label: 'B', text: '0.475' },

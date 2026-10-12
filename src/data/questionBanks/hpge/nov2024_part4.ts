@@ -11,35 +11,6 @@ export const HPGE_NOV2024_PART4: Question[] = [
     month: 'November',
     category: 'Geotechnical Engineering - Earthwork & Embankment Compaction',
     text: 'Situation 4 — A highway embankment 10 m wide and 1.5 m thick after compaction is to be constructed using sandy soil hauled from a borrow pit. The soil in the borrow pit has a water content of 15% and a void ratio of 0.69. The embankment specification requires a compacted dry unit weight of 18 kN/m³. Assume a specific gravity of solids of (Gs = 2.7). For a 1 km length of embankment, determine the following:\n\nPart 1: The dry unit weight (kN/m³) of sandy soil from the borrow pit required to construct the embankment.',
-    figureSvg: `<svg viewBox="0 0 450 230" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
-      <defs>
-        <pattern id="embHatch" width="8" height="8" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
-          <line x1="0" y1="0" x2="0" y2="8" stroke="#f59e0b" stroke-width="1.2" opacity="0.4"/>
-        </pattern>
-      </defs>
-      <!-- Embankment Trapezoid -->
-      <polygon points="120,70 330,70 370,150 80,150" fill="url(#embHatch)" stroke="#f59e0b" stroke-width="2"/>
-      <!-- Ground Line -->
-      <line x1="30" y1="150" x2="420" y2="150" stroke="#64748b" stroke-width="3"/>
-      <!-- Top Width = 10 m -->
-      <line x1="120" y1="55" x2="330" y2="55" stroke="#38bdf8" stroke-width="1.5"/>
-      <polygon points="120,55 128,51 128,59" fill="#38bdf8"/>
-      <polygon points="330,55 322,51 322,59" fill="#38bdf8"/>
-      <text x="225" y="48" fill="#38bdf8" font-size="11" font-family="sans-serif" font-weight="bold" text-anchor="middle">Width = 10 m</text>
-      <!-- Thickness = 1.5 m -->
-      <line x1="390" y1="70" x2="390" y2="150" stroke="#38bdf8" stroke-width="1.5"/>
-      <polygon points="390,70 386,78 394,78" fill="#38bdf8"/>
-      <polygon points="390,150 386,142 394,142" fill="#38bdf8"/>
-      <text x="402" y="115" fill="#38bdf8" font-size="11" font-family="sans-serif" font-weight="bold">1.5 m</text>
-      <!-- Specifications Text -->
-      <text x="225" y="105" fill="#f8fafc" font-size="11" font-family="sans-serif" font-weight="bold" text-anchor="middle">Compacted Embankment (γ_dry = 18 kN/m³)</text>
-      <text x="225" y="125" fill="#cbd5e1" font-size="10" font-family="sans-serif" text-anchor="middle">Length = 1 km = 1,000 m  |  V_emb = 15,000 m³</text>
-      <!-- Borrow pit parameters box -->
-      <rect x="70" y="170" width="310" height="45" rx="6" fill="#0f172a" stroke="#475569" stroke-width="1.5"/>
-      <text x="225" y="188" fill="#f59e0b" font-size="10" font-family="sans-serif" font-weight="bold" text-anchor="middle">Borrow Pit: w = 15%, e = 0.69, Gs = 2.7</text>
-      <text x="225" y="204" fill="#38bdf8" font-size="10" font-family="sans-serif" text-anchor="middle">γ_dry = Gs·γw / (1 + e) = 15.67 kN/m³</text>
-    </svg>`,
-    figureCaption: 'Figure 36: Embankment dimensions and borrow pit properties',
     options: [
       { label: 'A', text: '16.54' },
       { label: 'B', text: '15.67' },
@@ -141,29 +112,6 @@ export const HPGE_NOV2024_PART4: Question[] = [
     month: 'November',
     category: 'Geotechnical Engineering - Effective Stress Principle',
     text: 'Situation 5 — A 7.6 m thick clay layer is overlain by a 15.2 m thick sand deposit extending to the ground surface. When the groundwater table is at the ground surface, the sand has a saturated unit weight of 21.2 kN/m³ and a dry unit weight of 18.2 kN/m³. The saturated unit weight of the clay is 18.8 kN/m³. The groundwater table is then lowered by 7.6 m. The degree of saturation of the sand above the lowered groundwater table becomes 20%.\n\nPart 1: Evaluate the effective pressure, in kPa at the mid-height of the clay layer, before lowering the water table.',
-    figureSvg: `<svg viewBox="0 0 460 250" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
-      <!-- Ground surface line -->
-      <line x1="40" y1="30" x2="420" y2="30" stroke="#cbd5e1" stroke-width="2"/>
-      <text x="45" y="24" fill="#cbd5e1" font-size="10" font-family="sans-serif">Ground Surface</text>
-      <!-- Sand Layer 15.2 m -->
-      <rect x="40" y="30" width="380" height="90" fill="#0284c7" fill-opacity="0.25" stroke="#0284c7" stroke-width="1"/>
-      <text x="230" y="75" fill="#f8fafc" font-size="11" font-family="sans-serif" text-anchor="middle">Sand: 15.2 m (γ_sat = 21.2 kN/m³)</text>
-      <!-- Clay Layer 7.6 m -->
-      <rect x="40" y="120" width="380" height="80" fill="#0369a1" fill-opacity="0.35" stroke="#0284c7" stroke-width="1"/>
-      <text x="230" y="150" fill="#f8fafc" font-size="11" font-family="sans-serif" text-anchor="middle">Clay: 7.6 m (γ_sat = 18.8 kN/m³)</text>
-      <!-- Mid-height of clay line -->
-      <line x1="40" y1="160" x2="420" y2="160" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="4 2"/>
-      <text x="45" y="175" fill="#f59e0b" font-size="10" font-family="sans-serif" font-weight="bold">Mid-Clay (depth = 19.0 m)</text>
-      <!-- Water Table Marker at surface -->
-      <polygon points="350,22 355,30 345,30" fill="#38bdf8"/>
-      <line x1="340" y1="20" x2="360" y2="20" stroke="#38bdf8" stroke-width="1"/>
-      <text x="365" y="25" fill="#38bdf8" font-size="10" font-family="sans-serif">GWT 1 (Surface)</text>
-      <!-- Stress Summary Box -->
-      <rect x="100" y="195" width="260" height="45" rx="5" fill="#0f172a" stroke="#38bdf8" stroke-width="1"/>
-      <text x="230" y="212" fill="#cbd5e1" font-size="10" font-family="sans-serif" text-anchor="middle">p_T = 393.68 kPa  |  p_w = 186.39 kPa</text>
-      <text x="230" y="228" fill="#38bdf8" font-size="11" font-family="sans-serif" font-weight="bold" text-anchor="middle">p_e = 393.68 - 186.39 = 207.29 kPa</text>
-    </svg>`,
-    figureCaption: 'Figure 39: Initial stress state with groundwater table at the ground surface',
     options: [
       { label: 'A', text: '393.68' },
       { label: 'B', text: '207.29' },
@@ -182,7 +130,7 @@ export const HPGE_NOV2024_PART4: Question[] = [
         'Step 1: Total depth to mid-height of clay: 15.2 m + 7.6/2 m = 19.0 m.',
         'Step 2: Total vertical stress: p_T = 21.2(15.2) + 18.8(3.8) = 393.68 kPa.',
         'Step 3: Hydrostatic pore water pressure: p_w = 9.81 × 19.0 = 186.39 kPa.',
-        'Step 4: Effective stress: p_e = p_T - p_w = 393.68 - 186.39 = 207.29 kPa.',
+        'Step 4: Effective stress: p_e = 393.68 - 186.39 = 207.29 kPa.',
       ],
       finalAnswer: '207.29 (Option B)',
       pageNumber: 257,
@@ -390,37 +338,6 @@ export const HPGE_NOV2024_PART4: Question[] = [
     month: 'November',
     category: 'Fluid Statics - Forced Vortex in Cylindrical Vessel',
     text: 'In a vessel containing water, what is the relationship between the height of the rise at the sides and the depth of the depression at the center?',
-    figureSvg: `<svg viewBox="0 0 440 240" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
-      <defs>
-        <linearGradient id="vortexGrad46" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.75"/>
-          <stop offset="100%" stop-color="#0284c7" stop-opacity="0.95"/>
-        </linearGradient>
-      </defs>
-      <!-- Cylinder Tank -->
-      <g transform="translate(140, 20)">
-        <ellipse cx="80" cy="15" rx="70" ry="12" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
-        <rect x="10" y="15" width="140" height="170" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
-        <ellipse cx="80" cy="185" rx="70" ry="12" fill="#1e293b" stroke="#94a3b8" stroke-width="1.5"/>
-        <!-- Paraboloid Surface -->
-        <path d="M 10,40 Q 80,140 150,40 L 150,185 Q 80,197 10,185 Z" fill="url(#vortexGrad46)"/>
-        <!-- Static Water Level -->
-        <line x1="-15" y1="90" x2="175" y2="90" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="4 2"/>
-        <text x="185" y="94" fill="#f59e0b" font-size="10" font-family="sans-serif">Static Level</text>
-        <!-- Rise y/2 on side -->
-        <line x1="-5" y1="40" x2="-5" y2="90" stroke="#38bdf8" stroke-width="1.5"/>
-        <polygon points="-5,40 -8,48 -2,48" fill="#38bdf8"/>
-        <polygon points="-5,90 -8,82 -2,82" fill="#38bdf8"/>
-        <text x="-12" y="68" fill="#38bdf8" font-size="10" font-family="sans-serif" font-weight="bold" text-anchor="end">Rise = y/2</text>
-        <!-- Depression y/2 in center -->
-        <line x1="80" y1="90" x2="80" y2="140" stroke="#ec4899" stroke-width="1.5"/>
-        <polygon points="80,90 77,98 83,98" fill="#ec4899"/>
-        <polygon points="80,140 77,132 83,132" fill="#ec4899"/>
-        <text x="90" y="118" fill="#ec4899" font-size="10" font-family="sans-serif" font-weight="bold">Depression = y/2</text>
-      </g>
-      <text x="220" y="225" fill="#f8fafc" font-size="12" font-family="sans-serif" font-weight="bold" text-anchor="middle">y_rise = y_depression = y / 2 (Symmetry Principle)</text>
-    </svg>`,
-    figureCaption: 'Figure 46: Principle of symmetry in forced vortex paraboloid of revolution',
     options: [
       { label: 'A', text: 'The rise at the sides is greater than the depression at the center.' },
       { label: 'B', text: 'The rise at the sides is equal to the depression at the center.' },
